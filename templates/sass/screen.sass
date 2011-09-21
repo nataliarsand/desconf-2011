@@ -10,7 +10,8 @@
   margin-#{$side}: $value
 
 body
-  background: #F9F9F9
+  color: #333
+  background: #F9F9F9 url(imgs/bg.png) repeat
   font-family: "Helvetica", Arial, sans-serif
 
 a, a:link, a:visited
@@ -21,12 +22,38 @@ a, a:link, a:visited
 
 .logo
   img
-    width: 140px
+    width: 220px
   .date
-    width: 140px
+    width: 220px
     text-align: right
     color: #999
     font-size: 0.9em
+
+.bubble, .basic_info
+  padding: 10px
+  position: relative
+  margin-top: 90px
+  margin-left: 43px
+  background: #FFF
+  float: left
+  font-size: 2em
+  text-align: center
+  .arrow
+    position: absolute
+    left: -95px
+    top: 40px
+    border-style: solid
+    border-width: 0 50px 51px
+    border-color: transparent #FFF transparent transparent
+.basic_info
+  background: none
+  .city, .date
+    margin: 0
+  .city
+    font-size: 1.4em
+  .date
+    font-size: 2.2em
+
 nav.main
   +border-left-radius(8px)
   +box-shadow(0 1px 0 #FFF)
