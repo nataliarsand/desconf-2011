@@ -9,6 +9,8 @@ head
 
 	meta name="viewport" content="width=device-width,initial-scale=1"
 
+	link rel="stylesheet" href="css/desconf.css"
+	link rel="stylesheet" href="css/960_12_col.css"
 	link rel="stylesheet" href="css/styles.css"
 	link rel="stylesheet" href="css/screen.css"
 
@@ -16,13 +18,37 @@ head
 
 body
 
-  #container
-    header
+  #container.container_12
+    header.grid_12 
+      figure.logo
+        img src="/imgs/desconf.png" alt="5 minutos que valem muito!"
+        .date
+          | 2011
 
+    nav.main
+      ul
+        li
+          a.selected href="/"
+            | Início
+        li
+          a href="#palestras"
+            | Palestras
+        li
+          a href="#open_spaces"
+            | Open Spaces e FishBolws
+        li
+          a href="/dojos"
+            | Dojos
+        li
+          a.buy href="#inscreva_se"
+            | Inscreva-se
+        li
+          a href="#contato"
+            | Contato
     #main role="main"
-      figure
-        img src="/images/desconf.png" alt="5 minutos que valem muito!"
-    footer
+
+
+  footer
 
 script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
 script window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')

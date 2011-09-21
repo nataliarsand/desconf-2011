@@ -4,6 +4,48 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import compass/css3
+@import compass/typography
 
-nav
-  +border-radius(5px)
+@mixin margin($side, $value: 0)
+  margin-#{$side}: $value
+
+body
+  background: #F9F9F9
+  font-family: "Helvetica", Arial, sans-serif
+
+a, a:link, a:visited
+  text-decoration: none
+
+#container
+  margin-top: 20px
+
+.logo
+  img
+    width: 140px
+  .date
+    width: 140px
+    text-align: right
+    color: #999
+    font-size: 0.9em
+nav.main
+  +border-left-radius(8px)
+  +box-shadow(0 1px 0 #FFF)
+  position: fixed
+  right: 0
+  background: #385569
+  padding: 15px 10px
+  margin: 10px
+  +margin(right)
+  ul
+    +horizontal-list
+    float: right
+    overflow: visible
+    a
+      +border-radius(20px)
+      +link-colors(#FFF, #A5D9FF, #A5D9FF, #FFF, #A5D9FF)
+      padding: 4px 10px
+    a:hover, .selected
+      background: #233643
+    .buy
+      color: #A5D9FF
+    
