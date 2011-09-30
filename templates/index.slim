@@ -9,7 +9,6 @@ head
 
 	meta name="viewport" content="width=device-width,initial-scale=1"
 
-	link rel="stylesheet" href="css/desconf.css"
 	link rel="stylesheet" href="css/960_12_col.css"
 	link rel="stylesheet" href="css/styles.css"
 	link rel="stylesheet" href="css/screen.css"
@@ -33,30 +32,73 @@ body
       .basic_info
         p.date 26 NOV
         p.city Porto Alegre
+      .clear
     nav.main
       ul
         li
           a.selected href="/"
             | Início
         li
-          a href="#palestras"
+          a href="#lectures"
             | Palestras
         li
-          a href="#open_spaces"
-            | Open Spaces e FishBolws
-        li
-          a href="/dojos"
-            | Dojos
+          a href="#interaction"
+            | Dojos e Open Spaces
         li
           a.buy href="#inscreva_se"
             | Inscreva-se
         li
-          a href="#contato"
+          a href="#contact"
             | Contato
     #main role="main"
 
+      section#lectures
+        .left.grid_7
+          h2 50 desconferistas
+          p Participantes que terão 5 minutos para compartilhar algo inspirador (Lightning Talk).
+          ul.people.speakers
+            - 50.times do
+              li
 
-  footer
+        span.plus +
+
+        .right.grid_4
+          h2 30 expectadores 
+          p Participantes que não farão Lightning Talks.
+          ul.people.public
+            - 30.times do
+              li
+      .clear
+
+
+      section#interaction
+        #dojos.grid_4.left
+          h2 Dojos
+          p Grupos trabalhando para resolver um problema melhorando suas habilidades com uma metodologia divertida.
+          span
+        
+        span.grid_4.plus +
+
+        #open_spaces.grid_4.right
+          h2 Open Spaces
+          p Espaços abertos para a galera trocar ideias e compartilhar conhecimento.
+          span
+
+        .clear
+        
+
+      section#buy_tickets
+        h2 Incrições
+        p As inscrições ainda não estão abertas, mas você pode registrar interesse e nós entraremos em contato assim que elas abrirem!
+
+  section#contact
+    .container_12
+      | Quer falar com a gente?
+      a contato@desconf.org
+
+  footer.container_12
+    a href="http://powertothecrowd.com" target="blank_"
+      img.engage src="imgs/engage.png" alt="Engage | Power to the crowd!"      
 
 script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
 script window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')
