@@ -26,6 +26,7 @@ h2
   font-size: 2.2em
   font-weight: normal
   margin: 10px 0 5px 0
+  font-family: 'Varela Round', sans-serif
 
 p
   color: #555
@@ -51,6 +52,9 @@ p
     text-align: right
     color: #999
     font-size: 0.9em
+
+.bubble
+  +box-shadow(0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -3px 0 rgba(0, 0, 0, 0.3) inset, 0 0 10px rgba(255, 255, 255, 0.3) inset, 0 2px 4px rgba(0, 0, 0, 0.1))
 
 .bubble, .basic_info
   padding: 10px
@@ -194,12 +198,16 @@ nav.main
   font-size: 3em
   clear: both
   background: #B7355D
-  color: #FFF
   padding: 20px 0
   +text-shadow(0 -1px rgba(0, 0, 0, .3))
+  p
+    float: left
+    font-family: 'Varela Round', sans-serif
+    color: #FFF
+    margin-top: 5px
   a
     color: #FFF
-    background: #CFA387
+    background: #CFC470
     float: right
     padding: 5px 20px
     +border-radius(3px)
@@ -207,9 +215,62 @@ nav.main
     +text-shadow(0 -1px rgba(0, 0, 0, .3))
     +transition(background-color .2s linear 0)
     &:hover
-      background: #E6B596
+      background: #E6DA7D
 
 footer
-  .engage
+  margin-top: 100px
+  .partners
+    margin: 20px 0
+    float: left
+    h3
+      margin: 0 0 10px 0
+    ul
+      float: left
+      margin: 0
+      li
+        background: #FFF
+        float: left
+        margin-right: 20px
+        +border-radius(5px)
+        &:last-child
+          margin: 0
+        a
+          +border-radius(5px)
+          padding: 10px
+          display: block
+          border: 2px solid transparent
+          &:hover
+            border: 2px solid #E0E0E0
+  .thanks
+    display: block
     float: right
-    margin: 20px
+    margin: 60px 0 0 16px
+    background: url(imgs/megaphone.png) no-repeat 5px center
+    padding: 5px 5px 5px 30px
+    font-variant: small-caps
+    color: #4C4C4C
+    &:hover
+      background-color: #FFF
+
+#thanks
+  margin-bottom: 20px
+  .wrapper
+    padding: 10px
+    background: #FCFCFC
+    border: 1px solid #FFF
+    width: 98%
+    float: left
+    +box-shadow(1px 1px #DDD, 2px 2px #DDD, 3px 3px #DDD, 4px 4px #DDD, 5px 5px #DDD, 6px 6px #DDD, 7px 7px #DDD, 8px 8px #DDD)
+    ul
+      margin-top: 20px
+      float: left
+    li
+      float: left
+      margin-right: 50px
+      text-align: center
+      &:last-child
+        margin-right: 0
+      a
+        color: #B7355D
+  #scroll_target
+  

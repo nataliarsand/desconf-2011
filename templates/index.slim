@@ -12,8 +12,10 @@ head
 	link rel="stylesheet" href="css/960_12_col.css"
 	link rel="stylesheet" href="css/styles.css"
 	link rel="stylesheet" href="css/screen.css"
+	link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round"
 
 	script src="js/libs/modernizr-2.0.6.min.js"
+
 
 body
 
@@ -93,12 +95,35 @@ body
 
   section#contact
     .container_12
-      | Quer falar com a gente?
+      p Quer falar com a gente?
       a contato@desconf.org
 
   footer.container_12
-    a href="http://powertothecrowd.com" target="blank_"
-      img.engage src="imgs/engage.png" alt="Engage | Power to the crowd!"      
+    .partners
+      h3 Apoio
+      ul.grid_11
+        li
+          a href="http://www.faculdadedombosco.edu.br/" target="blank_"
+            img src="imgs/dom_bosco.jpg" height="60px"
+        li
+          a href="http://engage.is/" target="blank_"
+            img src="imgs/engage.png" height="50px" style="margin-top: 10px"
+
+      a href="#" class="thanks" aplausos
+
+  #thanks style="display: none"
+    .container_12
+      .wrapper
+        h2 Quem faz a Desconf 2011 acontecer
+        ul
+          - for person in people do
+            li 
+              img src=person[:gravatar]
+              h3
+                a target="blank_" href=person[:href] =person[:name]
+      div#scroll_target
+          
+      
 
 script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
 script window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')
