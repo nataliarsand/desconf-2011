@@ -32,6 +32,9 @@ p
   color: #555
   margin: 0 0 10px 0
 
+*:focus
+  outline: none
+
 .left
   float: left
 
@@ -211,7 +214,7 @@ nav.main
 
 #buy_tickets
   margin-bottom: 100px
-  background: #D1D1D1
+  background: #FFF
   padding: 10px
   +border-radius(5px)
 
@@ -297,6 +300,45 @@ footer
   #scroll_target
   
 
+#register
+  li
+    float: left
+    position: relative
 
-.ss-form-entry
-  float: left !important
+  label[for="name"],
+  label[for="mail"]
+    font-size: 2.2em
+    color: #BBB
+    position: absolute
+    cursor: normal
+    top: 15px
+
+  input.text
+    border: none
+    font-size: 1.2em
+    padding: 10px
+    margin: 10px 20px 10px 30px
+    border: 1px solid #DDD
+    +transition(border-color .2s linear, background .2s linear)
+    +background-image(linear-gradient(white, #F9F9F9))
+    +border-radius(5px)
+    &:focus
+      border-color: #BBB
+      +background-image(linear-gradient(#F9F9F9, #EEE))
+  input[name="name"]
+    margin-left: 25px
+
+  .send_button
+    margin: 10px 10px 10px 0
+    color: #FFF
+    background: #60B3DC
+    padding: 10px 20px
+    border: 1px solid rgba(0, 0, 0, .2)
+    +transition(background-color .2s linear)
+    +border-radius(5px)
+    +text-shadow(0 -1px rgba(0, 0, 0, .2))
+    +box-shadow(0 1px rgba(255, 255, 255, .4) inset, 0 1px #fff)
+    &:focus, &:hover
+      border: 1px solid rgba(0, 0, 0, .5)
+      background: #58A5CC
+
