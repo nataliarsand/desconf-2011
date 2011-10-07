@@ -13,6 +13,7 @@ head
 	link rel="stylesheet" href="css/styles.css"
 	link rel="stylesheet" href="css/screen.css"
 	link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round"
+	link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Zeyada"
 
 	script src="js/libs/modernizr-2.0.6.min.js"
 
@@ -20,7 +21,7 @@ head
 body
 
   #container.container_12
-    header
+    header.top
       figure.logo.grid_3
         img src="/imgs/desconf.png" alt="5 minutos que valem muito!"
         .date
@@ -35,6 +36,16 @@ body
         p.date 26 NOV
         p.city Porto Alegre
       .clear
+
+    .share
+      p 
+        | Espalhe a palavra!
+      .buttons
+        a href="https://twitter.com/share" class="twitter-share-button" data-text="A @desconf 2011 já tem data marcada!" data-count="vertical" data-via="desconf"
+          | Tweet
+        script type="text/javascript" src="//platform.twitter.com/widgets.js"
+
+        iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdesconf.com.br&amp;send=false&amp;layout=box_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:62px;" allowTransparency="true"
     nav.main
       ul
         li
@@ -92,7 +103,16 @@ body
       section#buy_tickets
         h2 Incrições
         p As inscrições ainda não estão abertas, mas você pode registrar interesse e nós entraremos em contato assim que elas abrirem!
-
+        form action="" method="post" id="register"
+          fieldset
+            ol
+              li
+                label for="name" Name:
+                input type="text" name="name" class="text"
+              li
+                label for="mail" email:
+                input type="text" name="mail" class="text"
+            input type="submit" value="Send" class="send_button" onclick="alert('Pronto!'); return false;"
   section#contact
     .container_12
       p Quer falar com a gente?

@@ -38,6 +38,9 @@ p
 .right
   float: right
 
+header.top
+  margin-top: 60px
+
 #container
   margin-top: 20px
 
@@ -83,13 +86,32 @@ p
   .date
     font-size: 2.2em
 
+.share
+  margin: 10px 0
+  position: absolute
+  top: 0
+  right: 500px
+  p
+    background: url(imgs/arrow.png) no-repeat 40px 18px
+    height: 65px
+    position: absolute
+    top: 10px
+    left: -135px
+    font-size: 1.5em
+    font-family: 'Zeyada', cursive
+    +transform(rotate(-9deg))
+  .buttons
+    margin-left: 10px
+  .twitter-share-button
+    margin-right: 10px
+ 
 nav.main
   z-index: 100
   +border-left-radius(8px)
   +box-shadow(0 1px 0 #FFF)
   position: fixed
   right: 0
-  top: 0
+  top: 17px
   background: #385569
   padding: 15px 10px
   margin: 10px
@@ -274,3 +296,7 @@ footer
         color: #B7355D
   #scroll_target
   
+
+
+.ss-form-entry
+  float: left !important

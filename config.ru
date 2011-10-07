@@ -5,6 +5,7 @@ require 'sinatra'
 require 'sass'
 require 'slim'
 require 'digest/md5'
+require "./pony_gmail"
 require "./basics"
 
 run MyApp

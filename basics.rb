@@ -53,4 +53,14 @@ class MyApp < Sinatra::Base
     content_type 'text/css', :charset => 'utf-8'
     sass :"sass/#{params['name']}", Compass.sass_engine_options
   end
+
+  post '/' do
+    name = params[:name]
+    mail = params[:mail]
+
+    Pony.mail(:to => 'nataliarsand@gmail.com', :from => "#{email}", :subject => "#{name} se registrou para a Desconf 2011", :body => "#{name} - #{mail}")
+
+  end
+
+
 end
