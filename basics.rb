@@ -57,10 +57,10 @@ class MyApp < Sinatra::Base
   post '/' do
     name = params[:name]
     mail = params[:mail]
-
-    Pony.mail(:to => 'nataliarsand@gmail.com', :from => "#{email}", :subject => "#{name} se registrou para a Desconf 2011", :body => "#{name} - #{mail}")
-
+    Pony.mail(:to => 'nataliarsand@gmail.com', 
+              :from => "#{mail}", 
+              :subject => "#{name} se registrou para a Desconf 2011", 
+              :body => "#{name} - #{mail}")
+    redirect "/"
   end
-
-
 end

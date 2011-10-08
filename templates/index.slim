@@ -102,17 +102,18 @@ body
 
       section#buy_tickets
         h2 Incrições
-        p Registre-se para ficar sabendo quando as inscrições abrirem!
+        p As inscrições ainda não estão abertas, mas você pode registrar interesse e nós entraremos em contato assim que elas abrirem!
         form action="" method="post" id="register"
           fieldset
             ol
               li
                 label for="name" &#9786
-                input type="text" name="name" class="text" placeholder="Seu nome (ex: Chuck Noris)."
+                input type="text" name="name" class="text"
               li
-                label for="mail" @ 
-                input type="text" name="mail" class="text" placeholder="Seu email."
-            input type="submit" value="Send" class="send_button" onclick="alert('Pronto! Assim que abrirmos as inscrições, você estará entre os primeiros a saber! :)'); return false;"
+                label for="mail" @
+                input type="text" name="mail" class="text"
+            input type="submit" value="Send" class="button"
+            p = @message
   section#contact
     .container_12
       p Quer falar com a gente?
