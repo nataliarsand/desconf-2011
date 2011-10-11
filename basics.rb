@@ -17,7 +17,7 @@ class MyApp < Sinatra::Base
     people = [
       {
         href: "http://twitter.com/barbaracones",
-        name: "Barbara Wolff",
+        name: "Barbara Wolff Dick",
         gravatar: gravatar['barbara']
       },
       {
