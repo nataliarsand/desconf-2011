@@ -55,8 +55,12 @@ class MyApp < Sinatra::Base
   end
 
   post '/' do
-    name = params[:name]
-    mail = params[:mail]
+    s = Subscriber.create({
+      :name => params[:name],
+      :email => params[:mail],
+      :created_at => Time.now
+    })
+    
     redirect "/"
   end
 end
