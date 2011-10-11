@@ -16,7 +16,6 @@ if ENV["MONGOHQ_URL"].present?
   dbname = URI.parse(ENV["MONGOHQ_URL"]).path.gsub(/^\//, '')
 end
 
-
 CONN = Mongo::Connection.from_uri(uri)
 DB = CONN.db(dbname)
 
