@@ -52,18 +52,21 @@ body
           a.selected href="/"
             | Início
         li
-          a href="#lectures"
+          a href="#palestras"
             | Palestras
         li
-          a href="#interaction"
+          a href="#interacao"
             | Dojos e Open Spaces
         li
-          a.buy href="#inscreva_se"
+          a.buy href="#inscricoes"
             | Inscreva-se
         li
-          a href="#contact"
+          a href="#contato"
             | Contato
+            
     #main role="main"
+      
+      #palestras style="margin: 20px 0; height: 30px"
 
       section#lectures
         .left.grid_7
@@ -84,6 +87,8 @@ body
       .clear
 
 
+      #interacao style="margin: 20px 0; height: 30px"
+
       section#interaction
         #dojos.grid_4.left
           h2 Dojos
@@ -100,6 +105,8 @@ body
         .clear
         
 
+      #inscricoes style="margin: 20px 0; height: 60px"
+
       section#buy_tickets
         h2 Inscrições
         p As inscrições ainda não estão abertas, mas você pode registrar interesse e nós entraremos em contato assim que elas abrirem!
@@ -114,6 +121,10 @@ body
                 input type="text" name="mail" class="text" placeholder="Seu email"
             input type="submit" value="Send" class="button"
             p = @message
+
+
+  #contato style="margin: 20px 0; height: 50px"
+
   section#contact
     .container_12
       p Quer falar com a gente?
