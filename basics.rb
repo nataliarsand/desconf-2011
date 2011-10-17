@@ -9,7 +9,8 @@ class MyApp < Sinatra::Base
       'felipe'  => "felipe.benites@gmail.com",
       'natalia' => "nataliarsand@gmail.com",
       'pedro'   => "pedrobelleza@gmail.com",
-      'rafael'  => "rafaelbandeira3@gmail.com"
+      'rafael'  => "rafaelbandeira3@gmail.com",
+      'mauricio' => "m@bitbonsai.com"
     }.each_pair { |k, v| v.replace(Digest::MD5.hexdigest(v)) }
 
     gravatar = lambda { |name| "http://www.gravatar.com/avatar/#{emails[name]}" }
@@ -34,6 +35,11 @@ class MyApp < Sinatra::Base
         href: "http://twitter.com/nataliarsand",
         name: "Natalia Arsand",
         gravatar: gravatar['natalia']
+      },
+      {
+        href: "http://twitter.com/bitbonsai",
+        name: "Mauricio Wolff",
+        gravatar: gravatar['mauricio']
       },
       {
         href: "http://twitter.com/pedrobelleza",
