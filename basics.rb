@@ -2,6 +2,14 @@ class MyApp < Sinatra::Base
   set :public, File.dirname(__FILE__) + '/public'
   set :views, File.dirname(__FILE__) + '/templates'
 
+  before do
+    redirect "http://desconf.com.br" unless desconf_host?
+  end
+
+  def desconf_host?
+    !(request["SERVER_NAME"] =~ /desconf.com.br/)
+  end
+
   get '/' do
     emails = {
       'barbara' => "barbara@quavio.com.br",
