@@ -3,11 +3,11 @@ class MyApp < Sinatra::Base
   set :views, File.dirname(__FILE__) + '/templates'
 
   before do
-    redirect "http://desconf.com.br" unless desconf_host?
+    redirect "http://desconf.com.br" if heroku_host?
   end
 
-  def desconf_host?
-    !(request["SERVER_NAME"] =~ /desconf.com.br/)
+  def heroku_host?
+    request.host.match(/heroku/)
   end
 
   get '/' do
