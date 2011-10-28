@@ -30,7 +30,7 @@ class MyApp < Sinatra::Base
   end
 
   get '/paguei-seu-lindo' do
-    render_index(thankyou: 'Uhuuul! Nos vemos lá! Enquanto isso vou ficar processando seu pagamento aqui! Valeuzão!')
+    render_index(thankyou: 'Uhuuul! Nos vemos lá! <br /> Enquanto isso vou ficar processando seu pagamento aqui! Valeuzão!')
   end
 
   get '/css/:name.css' do
