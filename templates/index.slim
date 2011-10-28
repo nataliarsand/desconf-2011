@@ -55,17 +55,14 @@ body
     nav.main
       ul
         li
-          a.selected href="/"
-            | Início
-        li
           a href="#palestras"
             | Palestras
         li
-          a href="#interacao"
-            | Dojos e Open Spaces
-        li
           a.buy href="#inscricoes"
             | Inscreva-se
+        li
+          a href="#interacao"
+            | Dojos e Open Spaces
         li
           a href="#contato"
             | Contato
@@ -77,7 +74,9 @@ body
       section#lectures
         .left.grid_7
           h2 50 desconferistas
-          p Participantes que terão 5 minutos para compartilhar algo inspirador (Lightning Talk).
+          p 
+            | Inspirados, inspiradores, idealistas, gente que faz, gente que acontece e que tem muito para compartilhar! 
+            b Parece com você? Então inscreva-se!
           ul.people.speakers
             - 50.times do
               li
@@ -86,30 +85,12 @@ body
 
         .right.grid_4
           h2 30 espectadores 
-          p Participantes que não farão Lightning Talks.
+          p
+            | Gente bacana que quer aprender e se divertir, e o mais importante, socializar!
           ul.people.public
             - 30.times do
               li
       .clear
-
-
-      #interacao style="margin: 20px 0; height: 30px"
-
-      section#interaction
-        #dojos.grid_4.left
-          h2 Dojos
-          p Grupos trabalhando para resolver um problema melhorando suas habilidades com uma metodologia divertida.
-          span
-        
-        span.grid_4.plus +
-
-        #open_spaces.grid_4.right
-          h2 Open Spaces
-          p Espaços abertos para a galera trocar ideias e compartilhar conhecimento.
-          span
-
-        .clear
-        
 
       #inscricoes style="margin: 20px 0; height: 60px"
 
@@ -141,11 +122,30 @@ body
               input type="submit" value="Send" class="button"
               p = @message
 
+
+      #interacao style="margin: 20px 0; height: 30px"
+
+      section#interaction
+        #dojos.grid_4.left
+          h2 Dojos
+          p Grupos trabalhando para resolver um problema melhorando suas habilidades com uma metodologia divertida.
+          span
+        
+        span.grid_4.plus +
+
+        #open_spaces.grid_4.right
+          h2 Open Spaces
+          p Espaços abertos para a galera trocar ideias e compartilhar conhecimento.
+          span
+
+        .clear
+
+
   #contato style="margin: 20px 0; height: 50px"
 
   section#contact
     .container_12
-      p Quer falar com a gente?
+      p Fale conosco!
       a href="mailto:contato@desconf.com.br" contato@desconf.com.br
 
   footer.container_12
