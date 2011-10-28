@@ -3,8 +3,7 @@ head
 	meta charset="utf-8"
 	meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
 
-	title Desconferência rápida :: 5 minutos que valem muito!
-	meta name="description" content=""
+	title Desconferência rápida :: 5 minutos que valem muito!  meta name="description" content=""
 	meta name="author" content=""
 
 	meta name="og:title" content="#desconf - Desconferência Rápida :: 5 minutos que valem muito!"
@@ -28,6 +27,7 @@ body
 
   #container.container_12
     header.top
+      == slim :thankyou, locals: {message: thankyou ||= nil}
       figure.logo.grid_3
         img src="/imgs/desconf.png" alt="5 minutos que valem muito!"
         .date
@@ -115,19 +115,31 @@ body
 
       section#buy_tickets
         h2 Incrições
-        p As inscrições ainda não estão abertas, mas você pode registrar interesse e nós entraremos em contato assim que elas abrirem!
-        form action="" method="post" id="register"
-          fieldset
-            ol
-              li
-                label for="name" &#9786
-                input type="text" name="name" class="text" placeholder="Seu nome"
-              li
-                label for="mail" @
-                input type="text" name="mail" class="text" placeholder="Seu email"
-            input type="submit" value="Send" class="button"
-            p = @message
+        - if registration_open?
+          p Você escolhe, ou apresenta aquela sua ideia bacana ou experiência marcante, ou aparece para aprender, socializar e se divertir!
+          div style="width: 55%; float:left"
+            h3 = ["Desconferencista!", "Quero falar!"][rand(2)]
+            p Prepare sua lightning talk!
+            == slim :pagseguro, locals: {code: speaker_code}
+          div style="width: 40%; float:left"
+            h3 Espectador
+            p Prepare-se que só tem gente bacana!
+            == slim :pagseguro, locals: {code: "3D9F6EA56C6C8F4334380F985444EC2F"}
+          br style="clear: both; size: 100%"
 
+        - else
+          p As inscrições ainda não estão abertas, mas você pode registrar interesse e nós entraremos em contato assim que elas abrirem!
+          form action="" method="post" id="register"
+            fieldset
+              ol
+                li
+                  label for="name" &#9786
+                  input type="text" name="name" class="text" placeholder="Seu nome"
+                li
+                  label for="mail" @
+                  input type="text" name="mail" class="text" placeholder="Seu email"
+              input type="submit" value="Send" class="button"
+              p = @message
 
   #contato style="margin: 20px 0; height: 50px"
 
@@ -154,7 +166,7 @@ body
       .wrapper
         h2 Quem faz a Desconf 2011 acontecer
         ul
-          - for person in people do
+          - for person in happy_people! do
             li 
               img src=person[:gravatar]
               h3
