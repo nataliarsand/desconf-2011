@@ -3,6 +3,7 @@
 class MyApp < Sinatra::Base
   set :public, File.dirname(__FILE__) + '/public'
   set :views, File.dirname(__FILE__) + '/templates'
+  set :slim, pretty: true
 
   before do
     redirect "http://desconf.com.br" if heroku_host?
