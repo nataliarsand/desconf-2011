@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require './models/subscriber'
+
 class MyApp < Sinatra::Base
   set :public, File.dirname(__FILE__) + '/public'
   set :views, File.dirname(__FILE__) + '/templates'
@@ -23,7 +25,7 @@ class MyApp < Sinatra::Base
   end
 
   def render_index(locals = {})
-    slim :index, :locals => locals
+    slim :index, locals: locals
   end
 
   get '/' do
