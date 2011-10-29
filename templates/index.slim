@@ -21,6 +21,7 @@ head
 	link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Zeyada"
 
 	script src="js/libs/modernizr-2.0.6.min.js"
+	== slim :analytics
 
 
 body
@@ -158,7 +159,6 @@ body
       p Fale conosco!
       a href="mailto:contato@desconf.com.br" contato@desconf.com.br
 
-  footer.container_12
     .partners
       h3 Apoio
       ul.grid_11
@@ -187,14 +187,6 @@ body
 
 script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
 script window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')
-
-/ scripts concatenated and minified via ant build script
 script src="js/plugins.js"
 script src="js/script.js"
-
-javascript:
-  var _gaq=[['_setAccount','UA-2813289-12'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
 
