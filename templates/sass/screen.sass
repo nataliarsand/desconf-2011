@@ -41,8 +41,44 @@ p
 .right
   float: right
 
+.button
+  clear: both
+  cursor: pointer
+  color: #FFF
+  display: block
+  padding: 10px 5px 3px 5px
+  border: 2px solid #999
+  border: 1px solid rgba(0, 0, 0, 0.2)
+  float: left
+  text-transform: uppercase
+  font-size: 1.5em
+  text-align: center
+  background: #95E217
+  +border-radius(4px)
+  +transition(opacity 0.2s linear)
+  +box-shadow(0 2px rgba(255, 255, 255, 0.5) inset, 1px 1px #40740C, 2px 2px #40740C, 3px 3px #40740C)
+  +text-shadow(0 -1px rgba(0, 0, 0, 0.2))
+  &:link
+    color: #FFF
+  &:hover
+    color: #FFF
+    background: #5EA623
+  span
+    font-size: 1.8em
+
+
+
 header.top
-  margin-top: 60px
+  overflow: hidden
+  margin-top: 100px
+
+.location_date
+  float: left
+  margin: 70px 0 0 75px
+  font-size: 18px
+  a
+    color: #666
+    border-bottom: 1px dashed #666
 
 #container
   margin-top: 20px
@@ -65,7 +101,6 @@ header.top
 .bubble, .basic_info
   padding: 10px
   position: relative
-  margin-top: 90px
   margin-left: 43px
   background: #FFF
   float: left
@@ -109,28 +144,18 @@ header.top
     margin-right: 10px
  
 nav.main
-  z-index: 100
-  +border-left-radius(8px)
-  +box-shadow(0 1px 0 #FFF)
-  position: fixed
-  right: 0
-  top: 17px
-  background: #385569
-  padding: 15px 10px
-  margin: 10px
-  +margin(right)
+  float: right
   ul
-    +horizontal-list
-    float: right
     overflow: visible
+    margin: 0 0 40px 0
+    li
+      margin: 10px 0
     a
-      +border-radius(20px)
-      +link-colors(#FFF, #A5D9FF, #A5D9FF, #FFF, #A5D9FF)
-      padding: 4px 10px
+      padding: 5px
+      color: #385569
     a:hover, .selected
+      color: #FFF
       background: #233643
-    .buy
-      color: #FF0 !important
     
 #lectures
   margin: 100px 0 0 0
@@ -342,6 +367,7 @@ footer
     &:focus, &:hover
       border: 1px solid rgba(0, 0, 0, .5)
       background: #58A5CC
+
 
 #thankyou
   position: relative
