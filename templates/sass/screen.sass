@@ -42,7 +42,6 @@ p
   float: right
 
 .button
-  clear: both
   cursor: pointer
   color: #FFF
   display: block
@@ -70,15 +69,29 @@ p
 
 header.top
   overflow: hidden
-  margin-top: 100px
 
-.location_date
+.date_location
+.event_date, .event_time
   float: left
-  margin: 70px 0 0 75px
-  font-size: 18px
-  a
-    color: #666
-    border-bottom: 1px dashed #666
+  font-size: 2.8em
+  padding: 10px
+  border-right: 2px solid #FFF
+  +box-shadow(1px 0 0 #CCC)
+.event_date
+  text-transform: uppercase
+.location
+  float: left
+  padding: 5px 10px 10px
+  .dom_bosco
+    background: url(imgs/pin.png) no-repeat right center
+    padding: 5px 20px 0 0
+    a
+      color: #333
+      border-bottom: 1px dotted
+      font-size: 1.1em
+  .city
+    font-size: 1.3em
+
 
 #container
   position: relative
@@ -98,44 +111,32 @@ header.top
 
 .bubble
   +box-shadow(0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -3px 0 rgba(0, 0, 0, 0.3) inset, 0 0 10px rgba(255, 255, 255, 0.3) inset, 0 2px 4px rgba(0, 0, 0, 0.1))
-
-.bubble, .basic_info
+  margin-bottom: 75px
   padding: 10px
   position: relative
   margin-left: 43px
   background: #FFF
   float: left
-  font-size: 2em
+  font-size: 1.5em
   text-align: center
   .arrow
     position: absolute
     left: -95px
-    top: 40px
+    top: 25px
     border-style: solid
-    border-width: 0 50px 51px
+    border-width: 51px 50px 0 
     border-color: transparent #FFF transparent transparent
-.basic_info
-  background: none
-  .city, .date
-    margin: 0
-    color: #385569
-    text-align: center
-  .city
-    font-size: 1.4em
-  .date
-    font-size: 2.2em
 
 .share
-  margin: 10px 0
-  position: absolute
-  top: 0
-  right: 0
+  margin: 30px 0 0 0
+  position: relative
+  float: left
+  left: 40px
   p
-    background: url(imgs/arrow.png) no-repeat 40px 18px
-    height: 65px
-    position: absolute
-    top: 10px
-    left: -135px
+    background: url(imgs/arrow.png) no-repeat 40px 34px
+    float: left
+    height: 70px
+    margin-right: 10px
     font-size: 1.5em
     font-family: 'Zeyada', cursive
     +transform(rotate(-9deg))
@@ -146,17 +147,22 @@ header.top
  
 nav.main
   float: right
+  margin: 50px 0 30px 0
   ul
     overflow: visible
     margin: 0 0 40px 0
     li
-      margin: 10px 0
+      margin: 10px 30px 0 0
+      float: left
+      +border-radius(25px)
+      background: #233643
+      padding: 5px 10px
     a
       padding: 5px
-      color: #385569
-    a:hover, .selected
       color: #FFF
-      background: #233643
+    li:hover, .selected
+      color: #FFF
+      background: #3F6279
     
 #lectures
   margin: 100px 0 0 0
