@@ -3,6 +3,7 @@
 require './lib/happy_people'
 require './lib/registration'
 require './models/subscriber'
+require './models/lightning_talk'
 
 class MyApp < Sinatra::Base
   include Desconf::HappyPeople
@@ -22,6 +23,10 @@ class MyApp < Sinatra::Base
 
   def render_index(locals = {})
     slim :index, locals: locals
+  end
+
+  def videos_from_2010
+    LightningTalk.from_desconf_2010.sort_by { rand(100) }
   end
 
   get '/' do

@@ -123,6 +123,18 @@ body
               |  --&raquo;
 
 
+      section#desconf-2010
+        h2 Hits da #desconf 2010
+        ul
+          - for video in videos_from_2010
+            li.grid_4
+              p
+                img src="#{video.thumbnail}" alt="#{video.title}"
+              strong 
+                a target="_blank" href="http://vimeo.com/#{video.vimeo_id}"
+                  = video.title
+
+
       #palestras style="margin: 20px 0; height: 30px"
 
       section#lectures
