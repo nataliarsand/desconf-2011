@@ -4,8 +4,8 @@ require './models/vimeo_video'
 class VimeoVideoTest < Test::Unit::TestCase
   def setup
     @subject = VimeoVideo.new
-    @subject.id = '123'
-    @subject.title = 'a good video'
+    @subject[:title] = 'a good video'
+    @subject[:vimeo_id] = '123'
   end
 
   def testEmbedCode
