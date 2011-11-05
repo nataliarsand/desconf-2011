@@ -26,7 +26,7 @@ class MyApp < Sinatra::Base
   end
 
   def videos_from_2010
-    LightningTalk.from_desconf_2010.sort_by { rand(100) }
+    LightningTalk.from_desconf_2010
   end
 
   get '/' do
