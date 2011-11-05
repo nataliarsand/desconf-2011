@@ -62,9 +62,6 @@ body
               a href="http://g.co/maps/hqta9" Faculdade Dom Bosco 
             p.city
               | Porto Alegre
-        /a.button href="#inscricoes"
-        /  | Inscreva-se 
-        /  span agora!
 
            
     #main role="main"
@@ -94,8 +91,11 @@ body
       #sobre style="margin: 20px 0; height: 30px"
       
       section#about.container_12
-        h2.grid_12 
+        h2
           | A #desconf está de volta!
+        a.button href="#inscricoes"
+          | Inscreva-se 
+          span agora!
           
         .left.grid_8 style="margin-top: 15px; font-size: 18px"
           | O evento com as lightning talks que agitaram 50 cabeças,
@@ -215,7 +215,7 @@ body
                 li
                   label for="mail" @
                   input type="text" name="mail" class="text" placeholder="Seu email"
-              input type="submit" value="Send" class="button"
+              input type="submit" value="Send" class="subscribe_button"
               p = @message
 
 
