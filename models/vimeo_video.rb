@@ -20,4 +20,12 @@ class VimeoVideo
       </p>
     CODE
   end
+
+  def self.from_json(json)
+    new({
+      :vimeo_id  => json['id'],
+      :title     => json['title'],
+      :thumbnail => json['thumbnail_medium'],
+    })
+  end
 end
