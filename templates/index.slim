@@ -130,7 +130,8 @@ body
         - for video in videos_from_2010
           li.grid_4
             p
-              img src="#{video.thumbnail}" alt="#{video.title}"
+              a target="_blank" href="http://vimeo.com/#{video.vimeo_id}"
+                img src="#{video.thumbnail}" alt="#{video.title}"
             strong 
               a target="_blank" href="http://vimeo.com/#{video.vimeo_id}"
                 = video.title
