@@ -234,9 +234,9 @@ body
         ul
           - for person in happy_people! do
             li 
-              img src=person[:gravatar]
+              img src=person['gravatar']
               h3
-                a target="blank_" href=person[:href] =person[:name]
+                a target="blank_" href=person['href'] =person['name']
       div#scroll_target
           
       
