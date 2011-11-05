@@ -136,6 +136,7 @@ header.top
     margin-left: 10px
 
 #desconf-2010
+  position: relative
   padding: 40px 0 50px 0
   margin: 50px 0 30px
   overflow: hidden
@@ -143,6 +144,37 @@ header.top
   h2
     margin-bottom: 20px
     color: white
+  .moar-desconf-2010
+    position: absolute
+    bottom: 0
+    right: 0
+    margin: 0 0 -60px 0
+    display: block
+    background: #fff
+    height: 40px
+    line-height: 40px
+    padding: 0 35px 10px 15px 
+    float: right
+    text-transform: uppercase
+    +border-radius(5px)
+    color: #3F6279
+    background: #F9F9F9 url(imgs/bg.png) repeat
+    .arrow-down
+      position: absolute
+      top: 18px
+      right: 0
+      margin: 0 15px
+      display: block
+      width: 0
+      height: 0
+      border: 5px solid transparent
+      border-bottom: 3px solid transparent
+      border-top: 5px solid #3F6279
+      &.up
+        top: 14px
+        border: 5px solid transparent
+        border-top: 3px solid transparent
+        border-bottom: 5px solid #3F6279
   ul
     height: 220px
     overflow: hidden

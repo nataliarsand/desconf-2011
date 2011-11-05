@@ -124,7 +124,7 @@ body
 
 
   section#desconf-2010
-    .wrapper.container_12
+    .wrapper.container_12 style="position:relative"
       h2 Hits da #desconf 2010
       ul
         - for video in videos_from_2010
@@ -135,6 +135,9 @@ body
             strong 
               a target="_blank" href="http://vimeo.com/#{video.vimeo_id}"
                 = video.title
+      a.moar-desconf-2010 href="#moar-desconf-2010"
+        .text Ver mais
+        span.arrow-down
 
   .wrapper.container_12
 
