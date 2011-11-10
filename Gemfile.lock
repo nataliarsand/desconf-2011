@@ -58,6 +58,7 @@ GEM
       mongo (~> 1.3)
       tzinfo (~> 0.3.22)
     multi_json (1.0.3)
+    nokogiri (1.5.0)
     polyglot (0.3.2)
     rack (1.3.3)
     rack-cache (1.1)
@@ -94,6 +95,7 @@ DEPENDENCIES
   compass
   mailee
   mongoid (= 2.2)
+  nokogiri
   sass
   shotgun
   sinatra

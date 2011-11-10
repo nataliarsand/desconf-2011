@@ -6,6 +6,7 @@ gem 'compass'
 gem "mongoid", "2.2"
 gem "bson_ext", "~> 1.4"
 gem 'mailee'
+gem 'nokogiri'
 
 group :development do
   gem "shotgun"
