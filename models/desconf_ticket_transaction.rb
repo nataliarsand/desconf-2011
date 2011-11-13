@@ -8,6 +8,10 @@ module Desconf
     field :buyer_name       , type: String
     field :status           , type: String
 
+    def confirmed?
+      ['paid', 'accepted'].include? status
+    end
+
     def self.load_from_transaction(transaction)
       code = transaction.code
       obj = where(:transaction_code => code).first
