@@ -7,6 +7,12 @@ module Desconf
     field :type            , type: String
     field :transaction_code, type: String
 
+    def gravatar
+      require 'digest/md5'
+      hash = Digest::MD5.hexdigest(email)
+      "http://www.gravatar.com/avatar/#{hash}"
+    end
+
     def self.load_from_ticket(ticket)
       new.tap do |attendee|
         attendee.name  = ticket.buyer_name

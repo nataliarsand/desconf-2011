@@ -150,7 +150,10 @@ body
             | Inspirados, inspiradores, idealistas, gente que faz, gente que acontece e que tem muito para compartilhar! 
             b Parece com você? Então inscreva-se!
           ul.people.speakers
-            - 50.times do
+            - for speaker in speakers
+              li
+                img src="#{speaker.gravatar}" width="44" alt="#{speaker.name}" title="#{speaker.name}"
+            - (50 - speakers.count).times do
               li
 
         span.plus +
@@ -160,7 +163,10 @@ body
           p
             | Gente bacana que quer aprender e se divertir, e o mais importante, socializar!
           ul.people.public
-            - 30.times do
+            - for listener in listeners 
+              li
+                img src="#{listener.gravatar}" width="44" alt="#{listener.name}" title="#{listener.email}"
+            - (30 - listeners.count).times do
               li
       .clear
 

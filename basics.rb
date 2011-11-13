@@ -3,6 +3,7 @@
 require './lib/happy_people'
 require './lib/registration'
 require './models/subscriber'
+require './models/desconf_attendee'
 require './models/lightning_talk'
 
 class MyApp < Sinatra::Base
@@ -27,6 +28,14 @@ class MyApp < Sinatra::Base
 
   def videos_from_2010
     LightningTalk.from_desconf_2010
+  end
+
+  def speakers 
+    @speakers ||= Desconf::Attendee.where(type: 'speaker')
+  end
+
+  def listeners
+    @listeners ||= Desconf::Attendee.where(type: 'listener')
   end
 
   get '/' do
