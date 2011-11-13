@@ -5,6 +5,7 @@ module Pagseguro
     class Status
       PENDING = 1
       PAID = 3
+      ACCEPTED = 4
       CANCELLED = 7
 
       def initialize(status)
@@ -18,11 +19,16 @@ module Pagseguro
       def to_s
         return 'pending' if pending?
         return 'paid' if paid?
+        return 'accepted' if paid?
         return 'cancelled' if cancelled?
       end
 
       def paid?
-        @status == PAID
+        [PAID, ACCEPTED].include? @status 
+      end
+
+      def accepted?
+        @status == ACCEPTED
       end
 
       def cancelled?
