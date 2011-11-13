@@ -165,8 +165,7 @@ body
           ul.people.public
             - for listener in listeners 
               li
-                img src="#{listener.avatar}" width="44" height="41"
-                alt="#{listener.name}" title="#{listener.name}"
+                img src="#{listener.avatar}" width="44" height="41" alt="#{listener.name}" title="#{listener.name}"
             - (30 - listeners.count).times do
               li
       .clear
