@@ -147,12 +147,12 @@ body
         .left.grid_7
           h2 50 desconferistas
           p 
-            | Inspirados, inspiradores, idealistas, gente que faz, gente que acontece e que tem muito para compartilhar! 
+            | Inspirados, inspiradores, idealistas, gente que faz, gente que acontece e que vai fazer lightning talk! 
             b Parece com você? Então inscreva-se!
           ul.people.speakers
             - for speaker in speakers
               li
-                img src="#{speaker.gravatar}" width="44" alt="#{speaker.name}" title="#{speaker.name}"
+                img src="#{speaker.avatar}" width="44" alt="#{speaker.name}" title="#{speaker.name}"
             - (50 - speakers.count).times do
               li
 
@@ -165,7 +165,7 @@ body
           ul.people.public
             - for listener in listeners 
               li
-                img src="#{listener.gravatar}" width="44" alt="#{listener.name}" title="#{listener.email}"
+                img src="#{listener.avatar}" width="44" alt="#{listener.name}" title="#{listener.email}"
             - (30 - listeners.count).times do
               li
       .clear
