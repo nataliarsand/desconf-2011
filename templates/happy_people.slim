@@ -1,0 +1,12 @@
+#thanks style="display: none"
+  .container_12
+    .wrapper
+      h2 Quem faz a Desconf 2011 acontecer
+      ul
+        - for person in happy_people! do
+          li 
+            img src=person['gravatar']
+            h3
+              a target="blank_" href=person['href'] =person['name']
+    div#scroll_target
+

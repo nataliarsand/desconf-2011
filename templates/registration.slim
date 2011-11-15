@@ -1,0 +1,42 @@
+#inscricoes style="margin: 20px 0; height: 60px"
+
+section#buy_tickets
+  h2 Inscrições
+  - if registration_open?
+    p Você escolhe, ou apresenta aquela sua ideia bacana ou experiência marcante, ou aparece para aprender, socializar e se divertir!
+    div style="width: 55%; float:left"
+      h3 = ["Desconferencista!", "Quero falar!"][rand(2)]
+      p Participe falando do seu último projeto, aprendizado, ideia, sonho ou visão. Brilhe, mas seja rápido! 
+      ul
+        li ★  Faz lightning talk
+        li ★  Caneca com bigodera 
+        li ★  Vira ídolo imediato
+        li
+          b R$ 50,00
+      == slim :pagseguro, locals: {code: speaker_code}
+    div style="width: 40%; float:left"
+      h3 Espectador
+      p Quer só assistir e interagir nos dojos e open spaces, beleza! Vale à pena!
+      ul
+        li ★  Não faz lightning talk
+        li ★  Assiste às melhores palestras de 2011
+        li ★  Conhece um monte de gente bacana
+        li
+          b R$ 50,00
+      == slim :pagseguro, locals: {code: "3D9F6EA56C6C8F4334380F985444EC2F"}
+    br style="clear: both; size: 100%"
+
+  - else
+    p As inscrições ainda não estão abertas, mas você pode registrar interesse e nós entraremos em contato assim que elas abrirem!
+    form action="" method="post" id="register"
+      fieldset
+        ol
+          li
+            label for="name" &#9786
+            input type="text" name="name" class="text" placeholder="Seu nome"
+          li
+            label for="mail" @
+            input type="text" name="mail" class="text" placeholder="Seu email"
+        input type="submit" value="Send" class="subscribe_button"
+        p = @message
+

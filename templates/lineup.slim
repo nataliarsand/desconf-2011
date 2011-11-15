@@ -1,0 +1,29 @@
+#palestras style="margin: 20px 0; height: 30px"
+
+section#lectures
+  .left.grid_7
+    h2 50 desconferistas
+    p 
+      | Inspirados, inspiradores, idealistas, gente que faz, gente que acontece e que vai fazer lightning talk! 
+      b Parece com você? Então inscreva-se!
+    ul.people.speakers
+      - for speaker in speakers
+        li
+          img src="#{speaker.avatar}" width="44" height="41" alt="#{speaker.name}" title="#{speaker.name}"
+      - (50 - speakers.count).times do
+        li
+
+  span.plus +
+
+  .right.grid_4
+    h2 30 espectadores 
+    p
+      | Gente bacana que quer aprender e se divertir, e o mais importante, socializar!
+    ul.people.public
+      - for listener in listeners 
+        li
+          img src="#{listener.avatar}" width="44" height="41" alt="#{listener.name}" title="#{listener.name}"
+      - (30 - listeners.count).times do
+        li
+.clear
+

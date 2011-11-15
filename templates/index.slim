@@ -1,286 +1,56 @@
 doctype html
 head
-	meta charset="utf-8"
-	meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+  meta charset="utf-8"
+  meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
 
-	title Desconferência rápida :: 5 minutos que valem muito!  meta name="description" content=""
-	meta name="author" content=""
+  title 
+    | Desconferência rápida :: 5 minutos de empreendedorismo, design e desenvolvimento
 
-	meta name="og:title" content="#desconf - Desconferência Rápida :: 5 minutos que valem muito!"
-	meta name="og:url" content="http://desconf.com.br"
-	meta name="og:site_name" content="#desconf"
-	meta name="og:image" content="http://desconf.com.br/imgs/desconf.png"
+  meta name="description" content=""
+  meta name="author" content=""
+
+  meta name="og:title" content="#desconf - Desconferência rápida :: 5 minutos de empreendedorismo, design e desenvolvimento"
+  meta name="og:url" content="http://desconf.com.br"
+  meta name="og:site_name" content="#desconf"
+  meta name="og:image" content="http://desconf.com.br/imgs/desconf.png"
 
 
-	meta name="viewport" content="width=device-width,initial-scale=1"
+  meta name="viewport" content="width=device-width,initial-scale=1"
 
-	link rel="stylesheet" href="css/960_12_col.css"
-	link rel="stylesheet" href="css/styles.css"
-	link rel="stylesheet" href="css/screen.css"
-	link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round"
-	link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Zeyada"
+  link rel="stylesheet" href="css/960_12_col.css"
+  link rel="stylesheet" href="css/styles.css"
+  link rel="stylesheet" href="css/screen.css"
+  link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round"
+  link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Zeyada"
 
-	script src="js/libs/modernizr-2.0.6.min.js"
-	== slim :analytics
+  script src="js/libs/modernizr-2.0.6.min.js"
+  == slim :analytics
 
 
 body
-
   #container.container_12
     header.top
-      == slim :thankyou, locals: {message: thankyou ||= nil}
-      figure.logo.grid_3
-        img src="/imgs/desconf.png" alt="5 minutos que valem muito!"
-        .date
-          | 2011 - Mustache edition
-
-      .grid_9
-
-        .bubble.grid_4
-          p Empreendedorismo, Inovação, Design e Desenvolvimento web.
-          p
-            strong 
-              | Em apenas 5 minutos!
-          .arrow
-
-        .share.grid_4
-          p 
-            | Espalhe a palavra!
-          .buttons
-            a href="https://twitter.com/share" class="twitter-share-button" data-text="A @desconf 2011 já tem data marcada!" data-count="vertical" data-via="desconf"
-              | Tweet
-            script type="text/javascript" src="//platform.twitter.com/widgets.js"
-            iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdesconf.com.br&amp;send=false&amp;layout=box_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:62px;" allowTransparency="true"
-
-        .date_location.grid_9
-          p.event_date
-            | 26 Nov
-          p.event_time
-            | 9h às 18h
-          .location
-            p.dom_bosco
-              a href="http://g.co/maps/hqta9" Faculdade Dom Bosco 
-            p.city
-              | Porto Alegre
-
-           
+      == slim :header
+               
     #main role="main"
+      == slim :nav
+      == slim :about
+      == slim :lineup
 
 
-      nav.main.grid_12
-        ul
-          li.selected 
-            a href="#sobre"
-              | #desconf 2011
-          li
-            a href="#palestras"
-              | Palestras
-          li
-            a href="#interacao"
-              | Dojos e Open Spaces
-          li
-            a href="#inscricoes"
-              | Faça sua inscrição
-          li
-            a href="#contato"
-              | Contato
-          li
-            a href="http://blog.desconf.com.br"
-              | Blog
-      
-      #sobre style="margin: 20px 0; height: 30px"
-      
-      section#about.container_12
-        h2
-          | A #desconf está de volta!
-        a.button href="#inscricoes"
-          | Inscreva-se 
-          span agora!
-          
-        .left.grid_8 style="margin-top: 15px; font-size: 18px"
-          | O evento com as lightning talks que agitaram 50 cabeças,
-          |  com as mais brilhantes ideias e experiências em 2010, voltou em 2011!
-          
-          br 
-          h3 É só mais!
-          ul
-            li + conteúdo excelente
-            li + mais interação e conversa
-            li + bigode!!
-
-        .right.grid_4
-          h3 Quem fala?
-          p
-            | Você! Na #desconf são suas ideias que queremos ouvir!
-            |  Prepare seu conteúdo e venha fazer sua lightning talk!
-            a href="http://blog.desconf.com.br/porque-duvido-que-voce-nao-tenha-nada-a-dizer"
-              |  --&raquo;
-          h3 Lightning Talk?
-          p
-            | Palestra rápida de 5 minutos, direta ao assunto, sem enrolação.
-            |  Inspire, impressione e conte. Mas seja rápido!
-            a href="http://blog.desconf.com.br/introducao-rapida-a-lightning-talks"
-              |  --&raquo;
-
-
-  section#desconf-2010
-    .wrapper.container_12 style="position:relative"
-      h2 Hits da #desconf 2010
-      ul
-        - for video in videos_from_2010
-          li.grid_4
-            p
-              a target="_blank" href="http://vimeo.com/#{video.vimeo_id}"
-                img src="#{video.thumbnail}" alt="#{video.title}"
-            strong 
-              a target="_blank" href="http://vimeo.com/#{video.vimeo_id}"
-                = video.title
-      a.moar-desconf-2010 href="#moar-desconf-2010"
-        .text Ver mais
-        span.arrow-down
+  == slim :hits_desconf_2010
 
   .wrapper.container_12
+      == slim :agenda_info
+      == slim :registration
 
-      #palestras style="margin: 20px 0; height: 30px"
-
-      section#lectures
-        .left.grid_7
-          h2 50 desconferistas
-          p 
-            | Inspirados, inspiradores, idealistas, gente que faz, gente que acontece e que vai fazer lightning talk! 
-            b Parece com você? Então inscreva-se!
-          ul.people.speakers
-            - for speaker in speakers
-              li
-                img src="#{speaker.avatar}" width="44" height="41" alt="#{speaker.name}" title="#{speaker.name}"
-            - (50 - speakers.count).times do
-              li
-
-        span.plus +
-
-        .right.grid_4
-          h2 30 espectadores 
-          p
-            | Gente bacana que quer aprender e se divertir, e o mais importante, socializar!
-          ul.people.public
-            - for listener in listeners 
-              li
-                img src="#{listener.avatar}" width="44" height="41" alt="#{listener.name}" title="#{listener.name}"
-            - (30 - listeners.count).times do
-              li
-      .clear
-
-
-      #interacao style="margin: 20px 0; height: 30px"
-
-      section#interaction
-        #dojos.grid_4.left
-          h2 Dojos
-          p Grupos trabalhando para resolver um problema melhorando suas habilidades com uma metodologia divertida.
-          span
-        
-        span.grid_4.plus +
-
-        #open_spaces.grid_4.right
-          h2 Open Spaces
-          p Espaços abertos para a galera trocar ideias e compartilhar conhecimento.
-          span
-
-        .clear
-
-      #inscricoes style="margin: 20px 0; height: 60px"
-
-      section#buy_tickets
-        h2 Inscrições
-        - if registration_open?
-          p Você escolhe, ou apresenta aquela sua ideia bacana ou experiência marcante, ou aparece para aprender, socializar e se divertir!
-          div style="width: 55%; float:left"
-            h3 = ["Desconferencista!", "Quero falar!"][rand(2)]
-            p Participe falando do seu último projeto, aprendizado, ideia, sonho ou visão. Brilhe, mas seja rápido! 
-            ul
-              li ★  Faz lightning talk
-              li ★  Caneca com bigodera 
-              li ★  Vira ídolo imediato
-              li
-                b R$ 50,00
-            == slim :pagseguro, locals: {code: speaker_code}
-          div style="width: 40%; float:left"
-            h3 Espectador
-            p Quer só assistir e interagir nos dojos e open spaces, beleza! Vale à pena!
-            ul
-              li ★  Não faz lightning talk
-              li ★  Assiste às melhores palestras de 2011
-              li ★  Conhece um monte de gente bacana
-              li
-                b R$ 50,00
-            == slim :pagseguro, locals: {code: "3D9F6EA56C6C8F4334380F985444EC2F"}
-          br style="clear: both; size: 100%"
-
-        - else
-          p As inscrições ainda não estão abertas, mas você pode registrar interesse e nós entraremos em contato assim que elas abrirem!
-          form action="" method="post" id="register"
-            fieldset
-              ol
-                li
-                  label for="name" &#9786
-                  input type="text" name="name" class="text" placeholder="Seu nome"
-                li
-                  label for="mail" @
-                  input type="text" name="mail" class="text" placeholder="Seu email"
-              input type="submit" value="Send" class="subscribe_button"
-              p = @message
-
-
-  #contato style="margin: 20px 0; height: 50px"
-
-  section#contact
-    .container_12
-      p Fale conosco!
-      a href="mailto:contato@desconf.com.br" contato@desconf.com.br
+  == slim :contact
 
   footer.container_12
-    .partners
-      div.grid_5
-        h3 Apoio
-        ul
-          li
-            a href="http://www.rs.sucesu.org.br/" target="blank_"
-              img src="imgs/sucesu.png" width="100" style="margin:10px 0 9px"
-          li
-            a href="http://www.faculdadedombosco.edu.br/" target="blank_"
-              img src="imgs/dom_bosco.jpg" height="60px"
-      div.grid_7
-        h3 style="width: 100px; float: left" Patrocínio
-        a.button href="http://blog.desconf.com.br/pages/patrocinio-desconf-2011"
-          | Apoie inovação vc tbm 
-          strong &raquo;
-        ul
-          li
-            a href="http://github.com/" target="blank_"
-              img src="imgs/github.png" style="margin: 10px 0"
-          li
-            a href="http://kinghost.com.br/" target="blank_"
-              img src="imgs/kinghost.png" height="60px"
-          li
-            a href="http://engage.is/" target="blank_"
-              img src="imgs/engage.png" height="50px" style="margin-top: 10px"
-          li
-            a href="http://www.wildtech.com.br/" target="blank_"
-              strong WildTech
-
+    == slim :partners
     a href="#" class="thanks" aplausos
 
-  #thanks style="display: none"
-    .container_12
-      .wrapper
-        h2 Quem faz a Desconf 2011 acontecer
-        ul
-          - for person in happy_people! do
-            li 
-              img src=person['gravatar']
-              h3
-                a target="blank_" href=person['href'] =person['name']
-      div#scroll_target
+  == slim :happy_people
           
       
 
