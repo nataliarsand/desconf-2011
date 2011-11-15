@@ -136,6 +136,53 @@ header.top
     float: left
     margin-left: 10px
 
+#agenda
+  h2
+    margin-bottom: 10px
+  .whitespace_troll
+    padding-top: 150px
+    text-align: center
+    color: rgba(200, 200, 200, .4)
+  li
+    height: 3.8em
+    &:last-child
+      background: rgba(255, 255, 255, .5)
+      margin-top: -10px
+      padding: 10px
+      height: auto
+      text-align: center
+    img
+      &.bacon
+        margin-bottom: -5px
+        height: 20px
+        +transform(rotate(30deg))
+    em 
+      margin-right: 1.5em
+      font-style: normal
+      font-size: 0.8em
+    .time
+      width: 3em
+      float: left
+      text-align: center
+      color: white
+      font-weight: bold
+      background: #666
+      margin-top: -6px
+      padding: 4px 0
+      +transform(rotate(3deg))
+      +border-radius(20px)
+      +box-shadow(1px 1px #fff)
+      +text-shadow(1px 2px #333)
+    .activity
+      text-align: left
+      width: 20em
+      margin-bottom: 0.5em
+      float: right
+      clear: right
+      img
+        margin-right: 15px
+        
+
 #desconf-2010
   position: relative
   padding: 40px 0 50px 0
