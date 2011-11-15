@@ -34,7 +34,7 @@ jQuery(function($) {
       $this.find('.arrow-down').removeClass('up');
     } else {
       clearInterval(window.rotation);
-      $('#desconf-2010 ul').animate({'height': '2880px'}, 1500);
+      $('#desconf-2010 ul').animate({'height': '3110px'}, 1500);
       $this.addClass('expanded');
       $this.find('.text').text('voltar');
       $this.find('.arrow-down').addClass('up');
