@@ -38,12 +38,16 @@ class MyApp < Sinatra::Base
     @listeners ||= Desconf::Attendee.where(type: 'listener')
   end
 
+  def just_registrated?
+    request.path =~ /paguei-seu-lindo/
+  end
+
   get '/' do
     render_index
   end
 
   get '/paguei-seu-lindo' do
-    render_index(thankyou: 'Uhuuul! Nos vemos lá! <br /> Enquanto isso vou ficar processando seu pagamento aqui! Valeuzão!')
+    render_index
   end
 
   get '/css/:name.css' do
