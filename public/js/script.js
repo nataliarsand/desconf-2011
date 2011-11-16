@@ -19,7 +19,10 @@ jQuery(function($) {
         pumpDown
     )
   }
-
+  $('.signup-dude a').click(function() {
+    $('.speaker-registration form').submit();
+    return false;
+  });
   pumpUp();
 
   var $container = $('#desconf-2010 ul');
