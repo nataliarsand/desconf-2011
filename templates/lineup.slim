@@ -10,8 +10,18 @@ section#lectures
       - for speaker in speakers
         li
           img src="#{speaker.avatar}" width="44" height="41" alt="#{speaker.name}" title="#{speaker.name}"
-      - (50 - speakers.count).times do
-        li
+      - (50 - speakers.count).times do |i|
+        - if i == 0
+          li
+            .signup-dude
+              .arrow
+              a href="#inscricoes"
+                span.normal
+                  | sua carinha aqui!
+                span.hover
+                  | inscreva-se agora!
+        - else
+          li
 
   span.plus +
 

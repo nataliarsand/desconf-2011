@@ -290,8 +290,40 @@ nav.main
       height: 41px
       width: 44px
       margin: 5px
-      overflow: hidden
-
+      position: relative
+      .signup-dude
+        background: #3F6279
+        position: absolute
+        padding: 5px 10px
+        z-index: 100
+        top: 25px
+        left: 6px
+        +transform(rotate(-19deg))
+        +box-shadow(-3px 3px  rgba(50, 50, 50, .6))
+        +border-radius(4px)
+        a
+          color: white
+          font-family: "Zeyada", cursive
+          font-size: 1.5em
+          display: block
+          width: 150px
+          height: 25px
+          .normal
+            display: inline
+          .hover
+            display: none
+          &:hover .hover
+            display: inline
+          &:hover .normal
+            display: none
+        .arrow
+          display: block
+          height: 1px
+          width: 1px
+          border: 6px #3F6279 solid
+          border-left-color: transparent
+          border-top-color: transparent
+          margin: 4px 0 0 8px
   .people.speakers
     background: #B7355D
     float: left

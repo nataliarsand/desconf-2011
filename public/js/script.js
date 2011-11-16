@@ -5,6 +5,23 @@ jQuery(function($) {
     return false;
   });
 
+
+  function pumpDown() {
+    $('.signup-dude a').animate(
+        {width: "-=3px", height: "-=3px", paddingLeft: '0px'},
+        pumpUp
+    )
+  }
+
+  function pumpUp() {
+    $('.signup-dude a').animate(
+        {width: "+=3px", height: "+=3px", paddingLeft: '2px'},
+        pumpDown
+    )
+  }
+
+  pumpUp();
+
   var $container = $('#desconf-2010 ul');
 
   function startRotation() {
