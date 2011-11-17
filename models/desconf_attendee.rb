@@ -9,6 +9,9 @@ module Desconf
     field :transaction_code, type: String
 
     def self.load_from_ticket(ticket)
+      obj = where(:transaction_code => ticket.transaction_code).first
+      return obj unless obj.nil?
+
       new.tap do |attendee|
         attendee.name  = ticket.buyer_name
         attendee.email = ticket.buyer_email
