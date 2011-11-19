@@ -2,6 +2,7 @@
 
 require './lib/happy_people'
 require './lib/registration'
+require './lib/host_verification'
 require './models/subscriber'
 require './models/desconf_attendee'
 require './models/lightning_talk'
@@ -9,18 +10,11 @@ require './models/lightning_talk'
 class MyApp < Sinatra::Base
   include Desconf::HappyPeople
   include Desconf::Registration
+  include Desconf::HostVerification
 
   set :public, File.dirname(__FILE__) + '/public'
   set :views, File.dirname(__FILE__) + '/templates'
   set :slim, pretty: true
-
-  before do
-    redirect "http://desconf.com.br" if heroku_host?
-  end
-
-  def heroku_host?
-    request.host.match(/heroku/)
-  end
 
   def render_index(locals = {})
     slim :index, locals: locals
