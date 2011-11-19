@@ -19,7 +19,7 @@ jQuery(function($) {
         pumpDown
     )
   }
-  $('.signup-dude a').click(function() {
+  $('.signup-dude a, .registry_now').click(function() {
     $('.speaker-registration form').submit();
     return false;
   });
@@ -60,4 +60,35 @@ jQuery(function($) {
       $this.find('.arrow-down').addClass('up');
     }
   });
+
+
+  var runcowbell;
+  var cowbell = new Audio('/audio/cowbell.mp3')
+  cowbell.loop = true;
+  cowbell.preload = true;
+  cowbell.moar = function() {
+    cowbell.currentTime=0;
+    cowbell.play();
+  }
+  window.moarCowbell = function() {
+    $('#moarcowbell').show();
+    cowbell.moar();
+    runcowbell = setInterval(function() { cowbell.moar(); }, 6400);
+    setTimeout(function() {
+      $(document).unbind('click.moar').bind('click.moar', function(e) {
+        var t = $(e.target);
+        var isMoar = t.is('#moarcowbell') || (t.parents('#moarcowbell').length != 0);
+
+        if (!isMoar) lessCowbell();
+      })
+    }, 1);
+  }
+  window.lessCowbell = function() {
+    cowbell.pause();
+    clearInterval(runcowbell);
+    $('#moarcowbell').fadeOut();
+  }
+
+  if (window.location.hash.toString().match(/mmoar-cowbell/)) 
+    setTimeout(function() { moarCowbell(); }, 2000);
 });
