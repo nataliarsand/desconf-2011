@@ -1,0 +1,54 @@
+doctype html
+head
+  link href="/imgs/favicon.png" rel="shortcut icon" type="image/x-icon"
+  meta charset="utf-8"
+  meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+
+  title 
+    | Desconferência rápida :: 5 minutos de empreendedorismo, design e desenvolvimento
+
+  meta name="description" content=""
+  meta name="author" content=""
+
+  meta name="og:title" content="#desconf - Desconferência rápida :: 5 minutos de empreendedorismo, design e desenvolvimento"
+  meta name="og:url" content="http://desconf.com.br"
+  meta name="og:site_name" content="#desconf"
+  meta name="og:image" content="http://desconf.com.br/imgs/desconf.png"
+
+
+  meta name="viewport" content="width=device-width,initial-scale=1"
+
+  link rel="stylesheet" href="css/960_12_col.css"
+  link rel="stylesheet" href="css/styles.css"
+  link rel="stylesheet" href="css/screen.css"
+  link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round"
+  link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Zeyada"
+
+  script src="js/libs/modernizr-2.0.6.min.js"
+  == slim :analytics
+
+
+body
+  #container.container_12
+    header.top
+      == slim :header
+
+    == yield  
+
+
+  == slim :hits_desconf_2010
+  == slim :contact
+
+  footer.container_12
+    == slim :partners
+    a href="#" class="thanks" aplausos
+
+  == slim :happy_people
+
+  == slim :moar_cowbell
+script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+script window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')
+script src="js/plugins.js"
+script src="js/script.js"
+
+
