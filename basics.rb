@@ -10,7 +10,7 @@ require './models/lightning_talk'
 class MyApp < Sinatra::Base
   include Desconf::HappyPeople
   include Desconf::Registration
-  include Desconf::HostVerification
+  include Desconf::HostVerification 
 
   set :public, File.dirname(__FILE__) + '/public'
   set :views, File.dirname(__FILE__) + '/templates'
@@ -31,6 +31,10 @@ class MyApp < Sinatra::Base
   def listeners
     @listeners ||= Desconf::Attendee.where(type: 'listener')
   end
+  
+  def attendee
+    @attendee ||= Desconf::Attendee.find(params[:id])
+  end
 
   def just_registrated?
     request.path =~ /paguei-seu-lindo/
@@ -38,6 +42,19 @@ class MyApp < Sinatra::Base
 
   get '/' do
     render_index
+  end
+
+  post '/pessoa_bacana/:id' do
+    attendee.attributes = params[:attendee]
+    unless attendee.save
+      slim :attendee_form
+    else
+      redirect '/?registrado'
+    end
+  end
+
+  get '/pessoa_bacana/:id/editar' do
+    slim :attendee_form
   end
 
   get '/paguei-seu-lindo' do

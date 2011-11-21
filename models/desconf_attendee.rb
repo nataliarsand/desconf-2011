@@ -7,6 +7,13 @@ module Desconf
     field :type            , type: String
     field :avatar_url      , type: String
     field :transaction_code, type: String
+    field :twitter_handle  , type: String
+    field :tags            , type: String
+    field :pizza_flavors   , type: String
+    field :vegan           , type: Boolean
+    field :is_foda         , type: Boolean
+
+    validates_presence_of :is_foda, message: "Corrija o campo 'Sou foda?'"
 
     def self.load_from_ticket(ticket)
       obj = where(:transaction_code => ticket.transaction_code).first

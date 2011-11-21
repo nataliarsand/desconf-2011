@@ -1,0 +1,56 @@
+#main role="main"
+  h2 Pessoa Bacana
+
+  .errors
+    - for error in attendee.errors
+      p == attendee.errors[error].first
+
+  form#attendee_form.container_12 action="/pessoa_bacana/#{attendee.id}" method="POST"
+    .field
+      label.grid_3 for="attendee_name" 
+        | Meu nome
+      .grid_9
+        input#attendee_name name="attendee[name]" value="#{attendee.name}" placeholder="Linda Pessoa"
+    .field
+      label.grid_3 for="attendee_email" 
+        | Meu e-mail
+      .grid_9
+        input#attendee_name name="attendee[email]" value="#{attendee.email}" placeholder="eu@gmail.com"
+    .field
+      label.grid_3 for="attendee_twitter_handle" 
+        | Meu twitter
+      .grid_9
+        input#attendee_twitter_handle name="attendee[twitter_handle]" value="#{attendee.twitter_handle}" placeholder="@pessoabacana"
+    .field
+      label.grid_3 for="attendee_tags" 
+        | Assuntos que me interessam
+      .grid_9
+        input#attendee_tags name="attendee[tags]" value="#{attendee.tags}" placeholder="Futebol, samba, cerveja gelada"
+    .field
+      label.grid_3 for="attendee_avatar_url" 
+        | Minha foto linda
+      .grid_9
+        input#attendee_avatar_url name="attendee[avatar_url]" value="#{attendee.avatar_url}" placeholder="URL, ou pegamos do gravatar mesmo"
+    .field
+      label.grid_3 for="attendee_pizza_flavors" 
+        | Adoro pizza de
+      .grid_9
+        input#attendee_pizza_flavors name="attendee[pizza_flavors]" value="#{attendee.pizza_flavors}" placeholder="Bacon, bacon, bacon, bacon"
+    .field
+      label.grid_3 for="attendee_vegan" 
+        | Sou vegano ou vegetariano?
+      .grid_9
+        input#attendee_vegan name="attendee[pizza_vegan]" value="true" checked="#{attendee.vegan? || ''}" type="checkbox" style="width:auto; margin-top: .6em"
+        |  Sim
+    .field
+      label.grid_3 for="attendee_is_foda" 
+        | Sou foda?
+      .grid_9
+        input type="hidden" value="0" name="attendee[is_foda]" 
+        input#attendee_is_foda name="attendee[is_foda]" value="1" checked="#{attendee.is_foda? || ''}" type="checkbox" style="width:auto; margin-top: .6em"
+        |  Muito
+    .submit
+      button.button
+        | Manda ver!
+
+
