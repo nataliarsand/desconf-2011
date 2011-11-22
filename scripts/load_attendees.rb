@@ -8,6 +8,7 @@ tickets = TicketTransaction.all
 
 tickets.select(&:confirmed?).each do |ticket|
   attendee = Attendee.load_from_ticket(ticket)
+  attendee.is_foda = true
 
   if attendee.save
     puts "* loaded #{attendee.email} as #{attendee.type}"
