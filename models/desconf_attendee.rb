@@ -8,6 +8,7 @@ module Desconf
     field :avatar_url      , type: String
     field :transaction_code, type: String
     field :twitter_handle  , type: String
+    field :website_url     , type: String
     field :tags            , type: String
     field :pizza_flavors   , type: String
     field :vegan           , type: Boolean
