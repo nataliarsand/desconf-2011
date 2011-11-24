@@ -30,7 +30,8 @@ module Desconf
     end
 
     def avatar
-      avatar_url || gravatar
+      return avatar_url unless avatar_url.blank?
+      gravatar
     end
 
     protected
