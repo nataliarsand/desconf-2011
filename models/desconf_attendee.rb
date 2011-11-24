@@ -15,7 +15,7 @@ module Desconf
     field :is_foda         , type: Boolean
 
     validates_presence_of :is_foda, message: "Corrija o campo 'Sou foda?'"
-    validates_format_of :avatar_url, with: /^https?:\/\/.+$/
+    validates_format_of :avatar_url, with: /^(https?:\/\/.+)*$/
 
     def self.load_from_ticket(ticket)
       obj = where(:transaction_code => ticket.transaction_code).first
