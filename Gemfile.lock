@@ -29,11 +29,13 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
+    archive-tar-minitar (0.5.2)
     arel (2.2.1)
     bson (1.4.0)
     bson_ext (1.4.0)
     builder (3.0.0)
     chunky_png (1.2.4)
+    columnize (0.3.4)
     compass (0.11.5)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -42,6 +44,8 @@ GEM
     fssm (0.2.7)
     hike (1.2.1)
     i18n (0.6.0)
+    linecache19 (0.5.12)
+      ruby_core_source (>= 0.1.4)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -68,6 +72,19 @@ GEM
     rack-test (0.6.1)
       rack (>= 1.0)
     rake (0.9.2.2)
+    riot (0.12.5)
+      rr
+    rr (1.0.4)
+    ruby-debug-base19 (0.11.25)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby_core_source (0.1.5)
+      archive-tar-minitar (>= 0.5.2)
     sass (3.1.7)
     shotgun (0.9)
       rack (>= 1.0)
@@ -98,6 +115,8 @@ DEPENDENCIES
   mongoid (= 2.2)
   nokogiri
   rake
+  riot
+  ruby-debug19
   sass
   shotgun
   sinatra

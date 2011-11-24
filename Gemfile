@@ -12,3 +12,8 @@ gem 'rake'
 group :development do
   gem "shotgun"
 end
+
+group :test do
+  gem 'ruby-debug19'
+  gem 'riot'
+end
