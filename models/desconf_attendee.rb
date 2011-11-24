@@ -15,13 +15,14 @@ module Desconf
     field :is_foda         , type: Boolean
 
     validates_presence_of :is_foda, message: "Corrija o campo 'Sou foda?'"
+    validates_format_of :avatar_url, with: /^https?:\/\/.+$/
 
     def self.load_from_ticket(ticket)
       obj = where(:transaction_code => ticket.transaction_code).first
       return obj unless obj.nil?
 
       new.tap do |attendee|
-        attendee.name  = ticket.buyer_name
+        attendee.name   = ticket.buyer_name
         attendee.email = ticket.buyer_email
         attendee.type  = ticket.ticket_type
         attendee.transaction_code = ticket.transaction_code
