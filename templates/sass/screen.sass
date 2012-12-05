@@ -11,7 +11,7 @@
 
 body
   color: #333
-  background: #F9F9F9 url(imgs/bg.png) repeat
+  background: #F9F9F9 url(img/bg.png) repeat
   font-family: "Helvetica", Arial, sans-serif
   font-size: 16px
 
@@ -27,7 +27,8 @@ h2
   font-size: 2.2em
   font-weight: normal
   margin: 10px 0 5px 0
-  font-family: 'Varela Round', sans-serif
+  font-family: 'league-gothic', sans-serif
+  text-transform: uppercase
 
 p
   color: #555
@@ -72,7 +73,7 @@ p
   width: 100%
   margin-top: 4em
   padding: 5em 0
-  background: url(/imgs/stripeswork.png) #666
+  background: url(/img/stripeswork.png) #666
   color: #fff
   +text-shadow(1px 1px 3px #B7355D)
   font-weight: bold
@@ -94,6 +95,21 @@ p
 
 header.top
   overflow: hidden
+  .bg
+    margin: 20px 0
+    border-top: 4px solid #000
+    border-bottom: 4px solid #000
+    height: 400px
+    width: 100%
+    z-index: -1
+    overflow: hidden
+    position: absolute
+    img
+      width: 100%
+      margin-top: -300px
+
+  figure
+    margin-top: 60px
 
 .date_location
 .event_date, .event_time
@@ -109,7 +125,7 @@ header.top
   float: left
   padding: 5px 10px 10px
   .dom_bosco
-    background: url(imgs/pin.png) no-repeat right center
+    background: url(img/pin.png) no-repeat right center
     padding: 5px 20px 0 0
     a
       color: #333
@@ -128,7 +144,7 @@ header.top
 
 .logo
   img
-    width: 150px
+    width: 280px
 
 .bubble
   +box-shadow(0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 -3px 0 rgba(0, 0, 0, 0.3) inset, 0 0 10px rgba(255, 255, 255, 0.3) inset, 0 2px 4px rgba(0, 0, 0, 0.1))
@@ -218,7 +234,7 @@ header.top
   padding: 40px 0 50px 0
   margin: 50px 0 30px
   overflow: hidden
-  background: url(/imgs/carbon_fibre_v2.png) repeat
+  background: url(/img/carbon_fibre_v2.png) repeat
   h2
     margin-bottom: 20px
     color: white
@@ -236,7 +252,7 @@ header.top
     text-transform: uppercase
     +border-radius(5px)
     color: #3F6279
-    background: #F9F9F9 url(imgs/bg.png) repeat
+    background: #F9F9F9 url(img/bg.png) repeat
     .arrow-down
       position: absolute
       top: 18px
@@ -275,20 +291,9 @@ header.top
     
 
 .share
-  margin: 30px 0 0 0
-  position: relative
-  float: left
-  left: 40px
   p
-    background: url(imgs/arrow.png) no-repeat 40px 34px
-    float: left
-    height: 70px
-    margin-right: 10px
-    font-size: 1.5em
-    font-family: 'Zeyada', cursive
-    +transform(rotate(-9deg))
   .buttons
-    margin-left: 10px
+
   .twitter-share-button
     margin-right: 10px
  
@@ -316,7 +321,7 @@ nav.main
     +border-radius(5px)
     li
       float: left
-      background: url(imgs/face.png) no-repeat center
+      background: url(img/face.png) no-repeat center
       height: 41px
       width: 44px
       margin: 5px
@@ -410,14 +415,14 @@ nav.main
 
 #dojos
   span
-    background: url(imgs/dojo.png) no-repeat
+    background: url(img/dojo.png) no-repeat
     height: 260px
     width: 304px
     display: block
 
 #open_spaces
   span
-    background: url(imgs/conversation.png) no-repeat
+    background: url(img/conversation.png) no-repeat
     height: 250px
     width: 438px
     display: block
@@ -498,7 +503,7 @@ footer
     clear: both
     float: right
     margin: 30px 0 30px 16px
-    background: url(imgs/megaphone.png) no-repeat 5px center
+    background: url(img/megaphone.png) no-repeat 5px center
     padding: 5px 5px 5px 30px
     font-variant: small-caps
     color: #4C4C4C

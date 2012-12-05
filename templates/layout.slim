@@ -21,17 +21,21 @@ head
   link rel="stylesheet" href="/css/960_12_col.css"
   link rel="stylesheet" href="/css/styles.css"
   link rel="stylesheet" href="/css/screen.css"
-  link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round"
   link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Zeyada"
+  script src="http://use.edgefonts.net/league-gothic.js"
 
   script src="js/libs/modernizr-2.0.6.min.js"
   == slim :analytics
 
 
 body
-  #container.container_12
-    header.top
+  header.top
+    //.bg
+      img src="imgs/header_bg.png"
+    .container_12
       == slim :header
+  #container.container_12
+
 
     == yield  
     
